@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C961D7C2B8260C300961920 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C961D7B2B8260C300961920 /* APIManager.swift */; };
+		2C961D7E2B8269B200961920 /* GitHubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C961D7D2B8269B200961920 /* GitHubAPI.swift */; };
+		2C961D812B8273C000961920 /* GitHubSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C961D802B8273C000961920 /* GitHubSearchResponse.swift */; };
+		2C961D832B8273DB00961920 /* GitHubDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C961D822B8273DB00961920 /* GitHubDetailResponse.swift */; };
+		2C961D862B82751E00961920 /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C961D852B82751E00961920 /* Data+Extension.swift */; };
 		2C9822332B825FAC00AA2A14 /* overdareApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9822322B825FAC00AA2A14 /* overdareApp.swift */; };
 		2C9822352B825FAC00AA2A14 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9822342B825FAC00AA2A14 /* ContentView.swift */; };
 		2C9822372B825FAD00AA2A14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C9822362B825FAD00AA2A14 /* Assets.xcassets */; };
@@ -25,6 +30,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C961D7B2B8260C300961920 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		2C961D7D2B8269B200961920 /* GitHubAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAPI.swift; sourceTree = "<group>"; };
+		2C961D802B8273C000961920 /* GitHubSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchResponse.swift; sourceTree = "<group>"; };
+		2C961D822B8273DB00961920 /* GitHubDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubDetailResponse.swift; sourceTree = "<group>"; };
+		2C961D852B82751E00961920 /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
 		2C98222F2B825FAC00AA2A14 /* overdare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = overdare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C9822322B825FAC00AA2A14 /* overdareApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = overdareApp.swift; sourceTree = "<group>"; };
 		2C9822342B825FAC00AA2A14 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,6 +62,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C961D7A2B8260B400961920 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				2C961D7F2B8273AC00961920 /* Model */,
+				2C961D7B2B8260C300961920 /* APIManager.swift */,
+				2C961D7D2B8269B200961920 /* GitHubAPI.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		2C961D7F2B8273AC00961920 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2C961D802B8273C000961920 /* GitHubSearchResponse.swift */,
+				2C961D822B8273DB00961920 /* GitHubDetailResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2C961D842B82750D00961920 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				2C961D852B82751E00961920 /* Data+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		2C9822262B825FAC00AA2A14 = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +110,8 @@
 		2C9822312B825FAC00AA2A14 /* overdare */ = {
 			isa = PBXGroup;
 			children = (
+				2C961D842B82750D00961920 /* Extension */,
+				2C961D7A2B8260B400961920 /* Network */,
 				2C9822322B825FAC00AA2A14 /* overdareApp.swift */,
 				2C9822342B825FAC00AA2A14 /* ContentView.swift */,
 				2C9822362B825FAD00AA2A14 /* Assets.xcassets */,
@@ -197,8 +236,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C961D7C2B8260C300961920 /* APIManager.swift in Sources */,
+				2C961D862B82751E00961920 /* Data+Extension.swift in Sources */,
+				2C961D812B8273C000961920 /* GitHubSearchResponse.swift in Sources */,
+				2C961D832B8273DB00961920 /* GitHubDetailResponse.swift in Sources */,
 				2C9822352B825FAC00AA2A14 /* ContentView.swift in Sources */,
 				2C9822332B825FAC00AA2A14 /* overdareApp.swift in Sources */,
+				2C961D7E2B8269B200961920 /* GitHubAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
