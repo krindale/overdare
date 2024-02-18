@@ -11,7 +11,7 @@ import SwiftUI
 struct overdareApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SearchRepositoryView(viewModel: .init())
         }
     }
 }

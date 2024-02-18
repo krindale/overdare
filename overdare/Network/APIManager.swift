@@ -17,9 +17,9 @@ final class APIManager {
         return try data.decode(GitHubSearchResponse.self)
     }
     
-    func fetchGithubDetail(with owner: String, repo: String) async throws -> GitHubSearchResponse? {
+    func fetchGithubDetail(with owner: String, repo: String) async throws -> GitHubDetailResponse? {
         let data = try await request(api: GitHubAPI.fetchDetail(owner: owner, repo: repo))
-        return try data.decode(GitHubSearchResponse.self)
+        return try data.decode(GitHubDetailResponse.self)
     }
 }
 
@@ -35,10 +35,23 @@ extension APIManager {
         var request = URLRequest(url: url)
         request.httpMethod = api.method
         request.allHTTPHeaderFields = api.header
-
-        let (data, _) = try await URLSession.shared.data(for: request)
 #if DEBUG
-        print(data.prettyPrintedJSONString)
+    print("\n--- Request Start ---")
+    print("URL: \(url.absoluteString)")
+    print("Method: \(api.method)")
+    if let headers = request.allHTTPHeaderFields {
+        print("Headers: \(headers)")
+    }
+    print("--- Request End ---\n")
+#endif
+        let (data, response) = try await URLSession.shared.data(for: request)
+#if DEBUG
+    if let httpResponse = response as? HTTPURLResponse {
+        print("\n--- Response Start ---")
+        print("Status Code: \(httpResponse.statusCode)")
+        print("Response: \(data.prettyPrintedJSONString)")
+        print("--- Response End ---\n")
+    }
 #endif
         return data
     }

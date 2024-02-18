@@ -12,8 +12,12 @@
 		2C961D812B8273C000961920 /* GitHubSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C961D802B8273C000961920 /* GitHubSearchResponse.swift */; };
 		2C961D832B8273DB00961920 /* GitHubDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C961D822B8273DB00961920 /* GitHubDetailResponse.swift */; };
 		2C961D862B82751E00961920 /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C961D852B82751E00961920 /* Data+Extension.swift */; };
+		2C961D8C2B82808E00961920 /* SearchRepositoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C961D8B2B82808E00961920 /* SearchRepositoryView.swift */; };
+		2C961D8F2B8280AF00961920 /* SearchRepositoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C961D8E2B8280AF00961920 /* SearchRepositoryViewModel.swift */; };
+		2C961D942B8283AE00961920 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C961D932B8283AE00961920 /* TagView.swift */; };
+		2C961D972B828D0800961920 /* RepositoryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C961D962B828D0800961920 /* RepositoryDetailView.swift */; };
+		2C961D992B828D1C00961920 /* RepotisoryDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C961D982B828D1C00961920 /* RepotisoryDetailViewModel.swift */; };
 		2C9822332B825FAC00AA2A14 /* overdareApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9822322B825FAC00AA2A14 /* overdareApp.swift */; };
-		2C9822352B825FAC00AA2A14 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9822342B825FAC00AA2A14 /* ContentView.swift */; };
 		2C9822372B825FAD00AA2A14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C9822362B825FAD00AA2A14 /* Assets.xcassets */; };
 		2C98223A2B825FAD00AA2A14 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C9822392B825FAD00AA2A14 /* Preview Assets.xcassets */; };
 		2C9822442B825FAD00AA2A14 /* overdareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9822432B825FAD00AA2A14 /* overdareTests.swift */; };
@@ -35,9 +39,13 @@
 		2C961D802B8273C000961920 /* GitHubSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchResponse.swift; sourceTree = "<group>"; };
 		2C961D822B8273DB00961920 /* GitHubDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubDetailResponse.swift; sourceTree = "<group>"; };
 		2C961D852B82751E00961920 /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
+		2C961D8B2B82808E00961920 /* SearchRepositoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryView.swift; sourceTree = "<group>"; };
+		2C961D8E2B8280AF00961920 /* SearchRepositoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryViewModel.swift; sourceTree = "<group>"; };
+		2C961D932B8283AE00961920 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
+		2C961D962B828D0800961920 /* RepositoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailView.swift; sourceTree = "<group>"; };
+		2C961D982B828D1C00961920 /* RepotisoryDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepotisoryDetailViewModel.swift; sourceTree = "<group>"; };
 		2C98222F2B825FAC00AA2A14 /* overdare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = overdare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C9822322B825FAC00AA2A14 /* overdareApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = overdareApp.swift; sourceTree = "<group>"; };
-		2C9822342B825FAC00AA2A14 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2C9822362B825FAD00AA2A14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C9822392B825FAD00AA2A14 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2C98223F2B825FAD00AA2A14 /* overdareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = overdareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +97,41 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		2C961D872B82804C00961920 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				2C961D952B828CDC00961920 /* RepositoryDetail */,
+				2C961D882B82806200961920 /* SearchRepository */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		2C961D882B82806200961920 /* SearchRepository */ = {
+			isa = PBXGroup;
+			children = (
+				2C961D8B2B82808E00961920 /* SearchRepositoryView.swift */,
+				2C961D8E2B8280AF00961920 /* SearchRepositoryViewModel.swift */,
+			);
+			path = SearchRepository;
+			sourceTree = "<group>";
+		};
+		2C961D902B82830400961920 /* UIComponent */ = {
+			isa = PBXGroup;
+			children = (
+				2C961D932B8283AE00961920 /* TagView.swift */,
+			);
+			path = UIComponent;
+			sourceTree = "<group>";
+		};
+		2C961D952B828CDC00961920 /* RepositoryDetail */ = {
+			isa = PBXGroup;
+			children = (
+				2C961D962B828D0800961920 /* RepositoryDetailView.swift */,
+				2C961D982B828D1C00961920 /* RepotisoryDetailViewModel.swift */,
+			);
+			path = RepositoryDetail;
+			sourceTree = "<group>";
+		};
 		2C9822262B825FAC00AA2A14 = {
 			isa = PBXGroup;
 			children = (
@@ -110,10 +153,11 @@
 		2C9822312B825FAC00AA2A14 /* overdare */ = {
 			isa = PBXGroup;
 			children = (
+				2C961D902B82830400961920 /* UIComponent */,
+				2C961D872B82804C00961920 /* Scene */,
 				2C961D842B82750D00961920 /* Extension */,
 				2C961D7A2B8260B400961920 /* Network */,
 				2C9822322B825FAC00AA2A14 /* overdareApp.swift */,
-				2C9822342B825FAC00AA2A14 /* ContentView.swift */,
 				2C9822362B825FAD00AA2A14 /* Assets.xcassets */,
 				2C9822382B825FAD00AA2A14 /* Preview Content */,
 			);
@@ -236,13 +280,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C961D8F2B8280AF00961920 /* SearchRepositoryViewModel.swift in Sources */,
 				2C961D7C2B8260C300961920 /* APIManager.swift in Sources */,
 				2C961D862B82751E00961920 /* Data+Extension.swift in Sources */,
 				2C961D812B8273C000961920 /* GitHubSearchResponse.swift in Sources */,
 				2C961D832B8273DB00961920 /* GitHubDetailResponse.swift in Sources */,
-				2C9822352B825FAC00AA2A14 /* ContentView.swift in Sources */,
 				2C9822332B825FAC00AA2A14 /* overdareApp.swift in Sources */,
+				2C961D8C2B82808E00961920 /* SearchRepositoryView.swift in Sources */,
+				2C961D992B828D1C00961920 /* RepotisoryDetailViewModel.swift in Sources */,
+				2C961D972B828D0800961920 /* RepositoryDetailView.swift in Sources */,
 				2C961D7E2B8269B200961920 /* GitHubAPI.swift in Sources */,
+				2C961D942B8283AE00961920 /* TagView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

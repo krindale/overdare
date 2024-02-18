@@ -7,16 +7,12 @@
 
 import Foundation
 
-struct GitHubDetailResponse: Codable {
+struct GitHubDetailResponse: Codable, Identifiable {
     let id: Int
     let fullName: String
     let description: String?
-    let owner: Owner
+    let owner: User
     let forksCount: Int
     let stargazersCount: Int
     let subscribersCount: Int
-}
-
-struct Owner: Codable {
-    let login: String
 }

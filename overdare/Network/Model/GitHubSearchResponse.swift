@@ -13,7 +13,7 @@ struct GitHubSearchResponse: Codable {
     let items: [Repository]
 }
 
-struct Repository: Codable {
+struct Repository: Codable, Identifiable, Hashable {
     let id: Int
     let name: String
     let fullName: String
@@ -23,7 +23,7 @@ struct Repository: Codable {
     let forksCount: Int
 }
 
-struct User: Codable {
+struct User: Codable, Hashable {
     let login: String
     let id: Int
 }
