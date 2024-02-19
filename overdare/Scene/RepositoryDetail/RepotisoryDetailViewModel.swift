@@ -23,7 +23,7 @@ final class RepositoryDetailViewModel: ObservableObject {
     }
 
     func fetchRepositoryDetail(with owner: String, repo: String) async throws {
-        let repositoryDetail = try await APIManager.shared.fetchGithubDetail(with: owner, repo: repo)
+        let repositoryDetail = try await FetchDataManager.shared.fetchGithubDetail(with: owner, repo: repo)
         
         Task {
             await MainActor.run {

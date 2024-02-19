@@ -9,14 +9,21 @@ import Foundation
 import Combine
 
 final class SearchRepositoryViewModel: ObservableObject {
-    @Published var searchRepositoryResult: GitHubSearchResponse?
+    @Published var searchRepositoryResult: GitHubSearchResponse? {
+        didSet {
+            print("count : \(self.searchRepositoryResult?.totalCount ?? 0)")
+            print("incompleteresult : \(self.searchRepositoryResult?.incompleteResults ?? false)")
+            print("item : \((self.searchRepositoryResult?.items ?? []).map { $0.fullName } )")
+            print("item count: \((self.searchRepositoryResult?.items ?? []).count )")
+        }
+    }
     @Published var searchText: String = ""
     
     private var cancellables: Set<AnyCancellable> = .init()
     
     init() {
         self.$searchText
-            .debounce(for: .seconds(0.3), scheduler: RunLoop.main)
+            .debounce(for: .seconds(0.1), scheduler: RunLoop.main)
             .receive(on: DispatchQueue.global())
             .sink { searchText in
                 Task { [ weak self] in
@@ -33,7 +40,7 @@ final class SearchRepositoryViewModel: ObservableObject {
     
     func fetchRepositry(with searchText: String) async {
         do {
-            let searchRepositoryResult = try await APIManager.shared.fetchGithubSearch(with: searchText)
+            let searchRepositoryResult = try await FetchDataManager.shared.fetchGithubSearch(with: searchText)
             
             Task {
                 await MainActor.run {

@@ -7,14 +7,6 @@
 
 import Foundation
 
-protocol APIProtocol {
-    var baseURL: URL { get }
-    var header: [String: String] { get }
-    var path: String { get }
-    var method: String { get }
-    var query: [String: String] { get }
-}
-
 enum GitHubAPI {
     // https://api.github.com/search/repositories?q={serchText}
     case searchRepotitory(searchText: String)
@@ -44,7 +36,11 @@ extension GitHubAPI : APIProtocol {
     }
     
     var header: [String: String] {
-        return [:]
+        var header: [String: String] = [:]
+        header["Accept"] = "application/vnd.github+json"
+        header["X-GitHub-Api-Version"] = "2022-11-28"
+        header["Authorization"] = "token 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"
+        return header
     }
     
     var method: String {
