@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:UIComponent/../Overdare/overdare.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:APIManager/APIManager.xcodeproj">
    </FileRef>
    <FileRef
@@ -9,8 +12,5 @@
    </FileRef>
    <FileRef
       location = "group:UIComponent/UIComponent.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "container:overdare.xcodeproj">
    </FileRef>
 </Workspace>
