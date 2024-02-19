@@ -8,7 +8,7 @@
 import Foundation
 
 extension URLRequest {
-    static func create<T: APIProtocol>(from api: T) throws -> URLRequest {
+    static public func create<T: APIProtocol>(from api: T) throws -> URLRequest {
         var components = URLComponents(url: api.baseURL.appendingPathComponent(api.path), resolvingAgainstBaseURL: false)
         components?.queryItems = api.query.map { URLQueryItem(name: $0.key, value: $0.value) }
         

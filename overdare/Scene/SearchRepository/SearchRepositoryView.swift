@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import UIComponent
+import APIManager
 
 struct SearchRepositoryView: View {
     

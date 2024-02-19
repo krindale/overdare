@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import APIManager
 
 final class RepositoryDetailViewModel: ObservableObject {
     @Published var repositoryDetailResponse: GitHubDetailResponse?

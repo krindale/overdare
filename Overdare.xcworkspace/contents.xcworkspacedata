@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:APIManager/APIManager.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:CacheManager/CacheManager.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:UIComponent/UIComponent.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "container:overdare.xcodeproj">
+   </FileRef>
+</Workspace>

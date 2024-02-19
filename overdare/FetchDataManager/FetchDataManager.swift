@@ -6,14 +6,8 @@
 //
 
 import Foundation
-
-protocol APIProtocol {
-    var baseURL: URL { get }
-    var header: [String: String] { get }
-    var path: String { get }
-    var method: String { get }
-    var query: [String: String] { get }
-}
+import CacheManager
+import APIManager
 
 final actor FetchDataManager {
     

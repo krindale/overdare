@@ -7,8 +7,8 @@
 
 import Foundation
 
-final actor CacheManager {
-    static let shared = CacheManager()
+final public actor CacheManager {
+    static public let shared = CacheManager()
 
     private let cache: URLCache
 
@@ -20,15 +20,14 @@ final actor CacheManager {
     }
 
     // 캐시에 데이터 저장
-    func storeToCache(data: Data, response: URLResponse, for request: URLRequest) {
+    public func storeToCache(data: Data, response: URLResponse, for request: URLRequest) {
         guard let httpResponse = response as? HTTPURLResponse else { return }
-
         let cachedResponse = CachedURLResponse(response: httpResponse, data: data, userInfo: nil, storagePolicy: .allowed)
         self.cache.storeCachedResponse(cachedResponse, for: request)
     }
 
     // 캐시에서 데이터 가져오기
-    func loadFromCache(for request: URLRequest) -> Data? {
+    public func loadFromCache(for request: URLRequest) -> Data? {
         // 1시간 주기로 캐시 삭제
         let oneHourAgo = Date().addingTimeInterval(-3600) // 1시간 전 시간
         self.cache.removeCachedResponses(since: oneHourAgo)

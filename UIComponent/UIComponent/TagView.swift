@@ -7,8 +7,7 @@
 
 import SwiftUI
 
-
-enum TagType {
+public enum TagType {
     case star(count: Int)
     case fork(count: Int)
     case subscribe(count: Int)
@@ -47,10 +46,14 @@ enum TagType {
 }
 
 
-struct TagView: View {
+public struct TagView: View {
     var type: TagType
+    
+    public init(type: TagType) {
+        self.type = type
+    }
 
-    var body: some View {
+    public var body: some View {
         HStack(spacing: 3.0) {
             Image(systemName: type.imageName)
                 .foregroundStyle(.white)

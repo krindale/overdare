@@ -7,12 +7,12 @@
 
 import Foundation
 
-final actor APIManager {
+final public actor APIManager {
     
-    static let shared: APIManager = .init()
+    static public let shared: APIManager = .init()
     private init() {}
     
-    func request(with request: URLRequest) async throws -> (Data, URLResponse) {
+    public func request(with request: URLRequest) async throws -> (Data, URLResponse) {
 #if DEBUG
         print("\n--- Request Start ---")
         print("URL: \(request.url?.absoluteString ?? "N/A")")

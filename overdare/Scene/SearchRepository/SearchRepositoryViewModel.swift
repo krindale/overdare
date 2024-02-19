@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import APIManager
 
 final class SearchRepositoryViewModel: ObservableObject {
     @Published var searchRepositoryResult: GitHubSearchResponse? {

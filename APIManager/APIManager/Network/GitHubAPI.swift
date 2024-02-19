@@ -7,7 +7,15 @@
 
 import Foundation
 
-enum GitHubAPI {
+public protocol APIProtocol {
+    var baseURL: URL { get }
+    var header: [String: String] { get }
+    var path: String { get }
+    var method: String { get }
+    var query: [String: String] { get }
+}
+
+public enum GitHubAPI {
     // https://api.github.com/search/repositories?q={serchText}
     // &page=2&per_page=50
     case searchRepotitory(searchText: String, page: Int, per_page: Int = 50)
@@ -18,7 +26,7 @@ enum GitHubAPI {
 
 extension GitHubAPI : APIProtocol {
     
-    var baseURL: URL {
+    public var baseURL: URL {
         guard let baseURL: URL = .init(string: "https://api.github.com") else {
             fatalError("Base URL Error !!!!")
         }
@@ -26,7 +34,7 @@ extension GitHubAPI : APIProtocol {
         return baseURL
     }
     
-    var path: String {
+    public var path: String {
         switch self {
         case .searchRepotitory:
             return "/search/repositories"
@@ -36,7 +44,7 @@ extension GitHubAPI : APIProtocol {
         }
     }
     
-    var header: [String: String] {
+    public var header: [String: String] {
         var header: [String: String] = [:]
         header["Accept"] = "application/vnd.github+json"
         header["X-GitHub-Api-Version"] = "2022-11-28"
@@ -44,11 +52,11 @@ extension GitHubAPI : APIProtocol {
         return header
     }
     
-    var method: String {
+    public var method: String {
         return "GET"
     }
 
-    var query: [String : String] {
+    public var query: [String : String] {
         switch self {
         case let .searchRepotitory(searchText, page, per_page):
             return ["q": searchText, "page" :"\(page)", "per_page": "\(per_page)"]

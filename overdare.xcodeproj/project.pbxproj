@@ -7,24 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2C237F0D2B834F32002F7417 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C237F0C2B834F32002F7417 /* CacheManager.swift */; };
-		2C237F0F2B8351DE002F7417 /* GithubErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C237F0E2B8351DE002F7417 /* GithubErrorResponse.swift */; };
 		2C237F122B8357AE002F7417 /* FetchDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C237F112B8357AE002F7417 /* FetchDataManager.swift */; };
-		2C237F142B835953002F7417 /* URLRequest+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C237F132B835953002F7417 /* URLRequest+Extension.swift */; };
-		2C961D7C2B8260C300961920 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C961D7B2B8260C300961920 /* APIManager.swift */; };
-		2C961D7E2B8269B200961920 /* GitHubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C961D7D2B8269B200961920 /* GitHubAPI.swift */; };
-		2C961D812B8273C000961920 /* GitHubSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C961D802B8273C000961920 /* GitHubSearchResponse.swift */; };
-		2C961D832B8273DB00961920 /* GitHubDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C961D822B8273DB00961920 /* GitHubDetailResponse.swift */; };
-		2C961D862B82751E00961920 /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C961D852B82751E00961920 /* Data+Extension.swift */; };
 		2C961D8C2B82808E00961920 /* SearchRepositoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C961D8B2B82808E00961920 /* SearchRepositoryView.swift */; };
 		2C961D8F2B8280AF00961920 /* SearchRepositoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C961D8E2B8280AF00961920 /* SearchRepositoryViewModel.swift */; };
-		2C961D942B8283AE00961920 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C961D932B8283AE00961920 /* TagView.swift */; };
 		2C961D972B828D0800961920 /* RepositoryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C961D962B828D0800961920 /* RepositoryDetailView.swift */; };
 		2C961D992B828D1C00961920 /* RepotisoryDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C961D982B828D1C00961920 /* RepotisoryDetailViewModel.swift */; };
 		2C9822332B825FAC00AA2A14 /* overdareApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9822322B825FAC00AA2A14 /* overdareApp.swift */; };
 		2C9822372B825FAD00AA2A14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C9822362B825FAD00AA2A14 /* Assets.xcassets */; };
 		2C98223A2B825FAD00AA2A14 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C9822392B825FAD00AA2A14 /* Preview Assets.xcassets */; };
 		2C9822442B825FAD00AA2A14 /* overdareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9822432B825FAD00AA2A14 /* overdareTests.swift */; };
+		2CAE5A722B837ADF00866E25 /* APIManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CAE5A712B837ADF00866E25 /* APIManager.framework */; };
+		2CAE5A732B837ADF00866E25 /* APIManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2CAE5A712B837ADF00866E25 /* APIManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2CAE5A762B837AE300866E25 /* CacheManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CAE5A752B837AE300866E25 /* CacheManager.framework */; };
+		2CAE5A772B837AE300866E25 /* CacheManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2CAE5A752B837AE300866E25 /* CacheManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2CAE5AB22B837EA500866E25 /* UIComponent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CAE5AB12B837EA500866E25 /* UIComponent.framework */; };
+		2CAE5AB32B837EA500866E25 /* UIComponent.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2CAE5AB12B837EA500866E25 /* UIComponent.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,19 +34,26 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		2CAE5A742B837ADF00866E25 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2CAE5A732B837ADF00866E25 /* APIManager.framework in Embed Frameworks */,
+				2CAE5AB32B837EA500866E25 /* UIComponent.framework in Embed Frameworks */,
+				2CAE5A772B837AE300866E25 /* CacheManager.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		2C237F0C2B834F32002F7417 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
-		2C237F0E2B8351DE002F7417 /* GithubErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubErrorResponse.swift; sourceTree = "<group>"; };
 		2C237F112B8357AE002F7417 /* FetchDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchDataManager.swift; sourceTree = "<group>"; };
-		2C237F132B835953002F7417 /* URLRequest+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Extension.swift"; sourceTree = "<group>"; };
-		2C961D7B2B8260C300961920 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
-		2C961D7D2B8269B200961920 /* GitHubAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAPI.swift; sourceTree = "<group>"; };
-		2C961D802B8273C000961920 /* GitHubSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchResponse.swift; sourceTree = "<group>"; };
-		2C961D822B8273DB00961920 /* GitHubDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubDetailResponse.swift; sourceTree = "<group>"; };
-		2C961D852B82751E00961920 /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
 		2C961D8B2B82808E00961920 /* SearchRepositoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryView.swift; sourceTree = "<group>"; };
 		2C961D8E2B8280AF00961920 /* SearchRepositoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryViewModel.swift; sourceTree = "<group>"; };
-		2C961D932B8283AE00961920 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		2C961D962B828D0800961920 /* RepositoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailView.swift; sourceTree = "<group>"; };
 		2C961D982B828D1C00961920 /* RepotisoryDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepotisoryDetailViewModel.swift; sourceTree = "<group>"; };
 		2C98222F2B825FAC00AA2A14 /* overdare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = overdare.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,6 +62,11 @@
 		2C9822392B825FAD00AA2A14 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2C98223F2B825FAD00AA2A14 /* overdareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = overdareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C9822432B825FAD00AA2A14 /* overdareTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = overdareTests.swift; sourceTree = "<group>"; };
+		2CAE5A6A2B83785B00866E25 /* APIManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = APIManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CAE5A6E2B83785F00866E25 /* CacheManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CacheManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CAE5A712B837ADF00866E25 /* APIManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = APIManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CAE5A752B837AE300866E25 /* CacheManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CacheManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CAE5AB12B837EA500866E25 /* UIComponent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UIComponent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +74,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CAE5A722B837ADF00866E25 /* APIManager.framework in Frameworks */,
+				2CAE5AB22B837EA500866E25 /* UIComponent.framework in Frameworks */,
+				2CAE5A762B837AE300866E25 /* CacheManager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,48 +90,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2C237F0B2B834F23002F7417 /* CacheManager */ = {
-			isa = PBXGroup;
-			children = (
-				2C237F0C2B834F32002F7417 /* CacheManager.swift */,
-			);
-			path = CacheManager;
-			sourceTree = "<group>";
-		};
 		2C237F102B83578A002F7417 /* FetchDataManager */ = {
 			isa = PBXGroup;
 			children = (
 				2C237F112B8357AE002F7417 /* FetchDataManager.swift */,
 			);
 			path = FetchDataManager;
-			sourceTree = "<group>";
-		};
-		2C961D7A2B8260B400961920 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				2C961D7B2B8260C300961920 /* APIManager.swift */,
-				2C961D7D2B8269B200961920 /* GitHubAPI.swift */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
-		2C961D7F2B8273AC00961920 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				2C961D802B8273C000961920 /* GitHubSearchResponse.swift */,
-				2C961D822B8273DB00961920 /* GitHubDetailResponse.swift */,
-				2C237F0E2B8351DE002F7417 /* GithubErrorResponse.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		2C961D842B82750D00961920 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				2C961D852B82751E00961920 /* Data+Extension.swift */,
-				2C237F132B835953002F7417 /* URLRequest+Extension.swift */,
-			);
-			path = Extension;
 			sourceTree = "<group>";
 		};
 		2C961D872B82804C00961920 /* Scene */ = {
@@ -140,14 +116,6 @@
 			path = SearchRepository;
 			sourceTree = "<group>";
 		};
-		2C961D902B82830400961920 /* UIComponent */ = {
-			isa = PBXGroup;
-			children = (
-				2C961D932B8283AE00961920 /* TagView.swift */,
-			);
-			path = UIComponent;
-			sourceTree = "<group>";
-		};
 		2C961D952B828CDC00961920 /* RepositoryDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +131,7 @@
 				2C9822312B825FAC00AA2A14 /* overdare */,
 				2C9822422B825FAD00AA2A14 /* overdareTests */,
 				2C9822302B825FAC00AA2A14 /* Products */,
+				2CAE5A692B83785B00866E25 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -178,13 +147,8 @@
 		2C9822312B825FAC00AA2A14 /* overdare */ = {
 			isa = PBXGroup;
 			children = (
-				2C961D7F2B8273AC00961920 /* Model */,
 				2C237F102B83578A002F7417 /* FetchDataManager */,
-				2C237F0B2B834F23002F7417 /* CacheManager */,
-				2C961D902B82830400961920 /* UIComponent */,
 				2C961D872B82804C00961920 /* Scene */,
-				2C961D842B82750D00961920 /* Extension */,
-				2C961D7A2B8260B400961920 /* Network */,
 				2C9822322B825FAC00AA2A14 /* overdareApp.swift */,
 				2C9822362B825FAD00AA2A14 /* Assets.xcassets */,
 				2C9822382B825FAD00AA2A14 /* Preview Content */,
@@ -208,6 +172,18 @@
 			path = overdareTests;
 			sourceTree = "<group>";
 		};
+		2CAE5A692B83785B00866E25 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2CAE5AB12B837EA500866E25 /* UIComponent.framework */,
+				2CAE5A752B837AE300866E25 /* CacheManager.framework */,
+				2CAE5A712B837ADF00866E25 /* APIManager.framework */,
+				2CAE5A6E2B83785F00866E25 /* CacheManager.framework */,
+				2CAE5A6A2B83785B00866E25 /* APIManager.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -218,6 +194,7 @@
 				2C98222B2B825FAC00AA2A14 /* Sources */,
 				2C98222C2B825FAC00AA2A14 /* Frameworks */,
 				2C98222D2B825FAC00AA2A14 /* Resources */,
+				2CAE5A742B837ADF00866E25 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -309,20 +286,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C961D8F2B8280AF00961920 /* SearchRepositoryViewModel.swift in Sources */,
-				2C961D7C2B8260C300961920 /* APIManager.swift in Sources */,
-				2C237F0F2B8351DE002F7417 /* GithubErrorResponse.swift in Sources */,
-				2C961D862B82751E00961920 /* Data+Extension.swift in Sources */,
-				2C961D812B8273C000961920 /* GitHubSearchResponse.swift in Sources */,
-				2C237F0D2B834F32002F7417 /* CacheManager.swift in Sources */,
-				2C961D832B8273DB00961920 /* GitHubDetailResponse.swift in Sources */,
 				2C9822332B825FAC00AA2A14 /* overdareApp.swift in Sources */,
 				2C237F122B8357AE002F7417 /* FetchDataManager.swift in Sources */,
 				2C961D8C2B82808E00961920 /* SearchRepositoryView.swift in Sources */,
-				2C237F142B835953002F7417 /* URLRequest+Extension.swift in Sources */,
 				2C961D992B828D1C00961920 /* RepotisoryDetailViewModel.swift in Sources */,
 				2C961D972B828D0800961920 /* RepositoryDetailView.swift in Sources */,
-				2C961D7E2B8269B200961920 /* GitHubAPI.swift in Sources */,
-				2C961D942B8283AE00961920 /* TagView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

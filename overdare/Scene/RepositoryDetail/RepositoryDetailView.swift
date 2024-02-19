@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIComponent
 
 struct RepositoryDetailView: View {
     @ObservedObject var viewModel: RepositoryDetailViewModel
