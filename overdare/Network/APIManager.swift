@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class APIManager {
+final actor APIManager {
     
     static let shared: APIManager = .init()
     private init() {}

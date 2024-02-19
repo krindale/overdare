@@ -8,9 +8,9 @@
 import Foundation
 
 struct GitHubSearchResponse: Codable {
-    let totalCount: Int
-    let incompleteResults: Bool
-    let items: [Repository]
+    var totalCount: Int
+    var incompleteResults: Bool
+    var items: [Repository]
 }
 
 struct Repository: Codable, Identifiable, Hashable {

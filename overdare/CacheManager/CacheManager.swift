@@ -6,7 +6,8 @@
 //
 
 import Foundation
-class CacheManager {
+
+final actor CacheManager {
     static let shared = CacheManager()
 
     private let cache: URLCache

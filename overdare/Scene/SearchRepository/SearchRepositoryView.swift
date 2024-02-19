@@ -13,39 +13,53 @@ struct SearchRepositoryView: View {
     
     var body: some View {
         NavigationStack() {
-            VStack {
-                List(viewModel.searchRepositoryResult?.items ?? []) { repo in
-                    NavigationLink(value: repo) {
-                        VStack(alignment: .leading) {
-                            Text(repo.fullName).font(.headline)
-                            HStack {
-                                Text(repo.description ?? "No description")
-                                    .font(.subheadline)
-                                    .lineLimit(1)
-                                Text("By")
-                                Text(repo.owner.login)
-                                    .font(.subheadline)
-                                    .lineLimit(1)
+            List(viewModel.searchRepositoryResult?.items ?? []) { repo in
+                NavigationLink(value: repo) {
+                    LazyVStack(alignment: .leading) {
+                        Text(repo.fullName).font(.headline)
+                        LazyHStack {
+                            Text(repo.description ?? "No description")
+                                .font(.subheadline)
+                                .lineLimit(1)
+                            Text("By")
+                            Text(repo.owner.login)
+                                .font(.subheadline)
+                                .lineLimit(1)
+                        }
+                        LazyHStack {
+                            TagView(type: .fork(count: repo.forksCount))
+                            TagView(type: .star(count: repo.stargazersCount))
+                        }.font(.caption)
+                    }
+                }.listRowBackground(GeometryReader { proxy in
+                    Color.clear.onAppear {
+                        if proxy.frame(in: .global).maxY < UIScreen.main.bounds.size.height + 100 {
+                            Task {
+                                await viewModel.fetchNextPage()
                             }
-                            HStack {
-                                TagView(type: .fork(count: repo.forksCount))
-                                TagView(type: .star(count: repo.stargazersCount))
-                            }.font(.caption)
                         }
                     }
-                }.listStyle(.plain)
-                .navigationTitle("Repository")
-                .searchable( // <-
-                  text: $viewModel.searchText,
-                  placement: .automatic,
-                  prompt: "Repository Search"
+                })
+            }
+            .listStyle(.plain)
+            .navigationTitle("Repository")
+            .searchable( // <-
+                text: $viewModel.searchText,
+                placement: .automatic,
+                prompt: "Repository Search"
+            )
+            .navigationDestination(for: Repository.self) { repo in
+                RepositoryDetailView(viewModel: .init(owner: repo.owner.login, repo: repo.name))
+            }
+            .alert(isPresented: $viewModel.isShowErrorPopup) {
+                Alert(
+                    title: Text("Alert"),
+                    message: Text(viewModel.errorMessage),
+                    dismissButton: .default(Text("확인"))
                 )
-                .navigationDestination(for: Repository.self) { repo in
-                    RepositoryDetailView(viewModel: .init(owner: repo.owner.login, repo: repo.name))
-                }
             }
         }
-     }
+    }
 }
 
 #Preview {

@@ -9,7 +9,8 @@ import Foundation
 
 enum GitHubAPI {
     // https://api.github.com/search/repositories?q={serchText}
-    case searchRepotitory(searchText: String)
+    // &page=2&per_page=50
+    case searchRepotitory(searchText: String, page: Int, per_page: Int = 50)
     
     // https://api.github.com/repos/{owner}/{repo}
     case fetchDetail(owner: String, repo: String)
@@ -46,11 +47,11 @@ extension GitHubAPI : APIProtocol {
     var method: String {
         return "GET"
     }
-    
+
     var query: [String : String] {
         switch self {
-        case let .searchRepotitory(searchText):
-            return ["q": searchText]
+        case let .searchRepotitory(searchText, page, per_page):
+            return ["q": searchText, "page" :"\(page)", "per_page": "\(per_page)"]
         default:
             return [:]
         }

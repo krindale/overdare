@@ -15,7 +15,7 @@ protocol APIProtocol {
     var query: [String: String] { get }
 }
 
-final class FetchDataManager {
+final actor FetchDataManager {
     
     static let shared: FetchDataManager = .init()
     
@@ -24,8 +24,8 @@ final class FetchDataManager {
     
     private init() {}
     
-    func fetchGithubSearch(with searchtext: String) async throws -> GitHubSearchResponse? {
-        let data = try await fetchData(api: GitHubAPI.searchRepotitory(searchText: searchtext))
+    func fetchGithubSearch(with searchtext: String, page: Int) async throws -> GitHubSearchResponse? {
+        let data = try await fetchData(api: GitHubAPI.searchRepotitory(searchText: searchtext, page: page))
         return try data.decode(GitHubSearchResponse.self)
     }
     
@@ -39,11 +39,11 @@ extension FetchDataManager {
     private func fetchData<T: APIProtocol>(api: T) async throws -> Data {
         let request = try URLRequest.create(from: api)
 
-        if let data = cacheManager.loadFromCache(for: request) {
+        if let data = await cacheManager.loadFromCache(for: request) {
             return data
         } else {
             let (data, response) = try await self.apiManager.request(with: request)
-            cacheManager.storeToCache(data: data, response: response, for: request)
+            await cacheManager.storeToCache(data: data, response: response, for: request)
             return data
         }
     }
