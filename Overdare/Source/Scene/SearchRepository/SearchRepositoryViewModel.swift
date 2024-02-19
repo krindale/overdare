@@ -30,8 +30,7 @@ final class SearchRepositoryViewModel: ObservableObject {
     
     init() {
         self.$searchText
-            .debounce(for: .seconds(0.15), scheduler: RunLoop.main)
-            .receive(on: DispatchQueue.global())
+            .debounce(for: .seconds(0.5), scheduler: RunLoop.main)
             .dropFirst()
             .sink { searchText in
                 Task { [ weak self] in
@@ -68,6 +67,10 @@ final class SearchRepositoryViewModel: ObservableObject {
     
     func fetchRepositry(with searchText: String, page: Int = 0) async {
         do {
+            guard searchText.isEmpty == false else {
+                self.searchRepositoryResult = nil
+                return
+            }
             let searchRepositoryResult = try await FetchDataManager.shared.fetchGithubSearch(with: searchText, page: page)
             
             Task {
