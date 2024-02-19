@@ -89,6 +89,7 @@ final class SearchRepositoryViewModel: ObservableObject {
         }
     }
     
+    @MainActor
     private func updateSearchResult(with newValue: GitHubSearchResponse, page: Int) {
         if page == 0 {
             self.searchRepositoryResult = newValue
