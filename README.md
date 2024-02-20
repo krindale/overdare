@@ -16,4 +16,6 @@
 
 3. **프로젝트 열기**: `tuist generate` 명령어가 완료되면, 생성된 Xcode workspace 파일(`Overdare.xcworkspace`)을 열어 작업을 시작할 수 있습니다.
 
+Tuist 3.40.0 
+
 ---
