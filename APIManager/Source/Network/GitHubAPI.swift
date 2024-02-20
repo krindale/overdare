@@ -46,9 +46,9 @@ extension GitHubAPI : APIProtocol {
     
     public var header: [String: String] {
         var header: [String: String] = [:]
-        header["Accept"] = "application/vnd.github+json"
-        header["X-GitHub-Api-Version"] = "2022-11-28"
-        header["Authorization"] = "token *[GitHub Token]*"
+//        header["Accept"] = "application/vnd.github+json"
+//        header["X-GitHub-Api-Version"] = "2022-11-28"
+//        header["Authorization"] = "token *[GitHub Token]*"
         return header
     }
     
